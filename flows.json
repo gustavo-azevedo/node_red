@@ -1,0 +1,850 @@
+[
+    {
+        "id": "c877a67983c2c99c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "10022948e177114c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2020b37a28e0c16c",
+        "type": "mqtt-broker",
+        "name": "Teste",
+        "broker": "143.107.102.8",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "638056dd70d063b7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Consumo de Energia Laboratório",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d06e8a4c1a9336d4",
+        "type": "ui_tab",
+        "name": "Mapeamento Energetico do Laboratório",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bb75fa75ece63af8",
+        "type": "ui_group",
+        "name": "Consumo",
+        "tab": "d06e8a4c1a9336d4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2e163821e8eec8a5",
+        "type": "ui_group",
+        "name": "Corrente",
+        "tab": "d06e8a4c1a9336d4",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "914424a3633c0b74",
+        "type": "ui_group",
+        "name": "Potencia",
+        "tab": "d06e8a4c1a9336d4",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "73fc5e7ffd995a0d",
+        "type": "ui_group",
+        "name": "Voltagem",
+        "tab": "d06e8a4c1a9336d4",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a4aa7804487c07e8",
+        "type": "mqtt in",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "topic": "garsoft/dev/je05/dados",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "2020b37a28e0c16c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "b137c90898fa8de1",
+                "644bb84294abf7e5",
+                "e3f3da6cb053074b",
+                "bb5a15658e2f11aa",
+                "b2434f3e55a2b394",
+                "46de66a962b2d64c",
+                "7d134e1ec0825a57",
+                "587d9e53e18370c0",
+                "5b22083f07e1f965",
+                "1e206edf03963620",
+                "737f92c01b1be158",
+                "73267dfc5efebbfb",
+                "0dd61be1b73d963d",
+                "0497883ebaa7a10d"
+            ]
+        ]
+    },
+    {
+        "id": "b137c90898fa8de1",
+        "type": "debug",
+        "z": "c877a67983c2c99c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 380,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "644bb84294abf7e5",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Potencia Total",
+        "func": "msg.payload = msg.payload.DATA.PT;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 440,
+        "wires": [
+            [
+                "5877a17ac89475f3",
+                "b62222aac6604192",
+                "20dcce731be3d160"
+            ]
+        ]
+    },
+    {
+        "id": "5877a17ac89475f3",
+        "type": "debug",
+        "z": "c877a67983c2c99c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "b62222aac6604192",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "914424a3633c0b74",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Potencia Total",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "250",
+        "ymax": "350",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1060,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7db5a8063a5cd0c",
+        "type": "ui_audio",
+        "z": "c877a67983c2c99c",
+        "name": "Aviso",
+        "group": "bb75fa75ece63af8",
+        "voice": "Microsoft Daniel - Portuguese (Brazil)",
+        "always": true,
+        "x": 1450,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "20dcce731be3d160",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Aviso consumo",
+        "func": "if (msg.payload > 400){\n    msg.payload = 'Consumo elevado'\n    return msg;\n} else {\n    msg.payload = 0\n    return msg;\n}\nreturn 0;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 440,
+        "wires": [
+            [
+                "b7db5a8063a5cd0c"
+            ]
+        ]
+    },
+    {
+        "id": "e3f3da6cb053074b",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Consumo geral",
+        "func": "msg.payload = msg.payload.DATA.KWHT;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "5e6dcb4e81adbf96"
+            ]
+        ]
+    },
+    {
+        "id": "5e6dcb4e81adbf96",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "bb75fa75ece63af8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "label": "Consumo Total",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1060,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb5a15658e2f11aa",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Voltagem ARMS",
+        "func": "msg.payload = msg.payload.DATA.VABCTRMS;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 720,
+        "wires": [
+            [
+                "bc9be3143b74f8cf"
+            ]
+        ]
+    },
+    {
+        "id": "b2434f3e55a2b394",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Corrente A",
+        "func": "msg.payload = msg.payload.DATA.IARMS;\nmsg.topic = 'Linha A'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 300,
+        "wires": [
+            [
+                "99de980086fc45ea"
+            ]
+        ]
+    },
+    {
+        "id": "bc9be3143b74f8cf",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "73fc5e7ffd995a0d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Voltagem ARMs Total",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99de980086fc45ea",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "2e163821e8eec8a5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Correntes Individuais",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46de66a962b2d64c",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Corrente C",
+        "func": "msg.payload = msg.payload.DATA.ICRMS;\nmsg.topic = 'Linha C'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 380,
+        "wires": [
+            [
+                "99de980086fc45ea"
+            ]
+        ]
+    },
+    {
+        "id": "7d134e1ec0825a57",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Corrente B",
+        "func": "msg.payload = msg.payload.DATA.IBRMS;\nmsg.topic = 'Linha B'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "99de980086fc45ea"
+            ]
+        ]
+    },
+    {
+        "id": "587d9e53e18370c0",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Potencia A",
+        "func": "msg.payload = msg.payload.DATA.PA;\nmsg.topic = 'Potencia A'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 480,
+        "wires": [
+            [
+                "551a460c95a6d878"
+            ]
+        ]
+    },
+    {
+        "id": "551a460c95a6d878",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "914424a3633c0b74",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Potencias Individais",
+        "chartType": "pie",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e206edf03963620",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Potencia C",
+        "func": "msg.payload = msg.payload.DATA.PC;\nmsg.topic = 'Potencia C'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "551a460c95a6d878"
+            ]
+        ]
+    },
+    {
+        "id": "5b22083f07e1f965",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Potencia B",
+        "func": "msg.payload = msg.payload.DATA.PB;\nmsg.topic = 'Potencia B'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 520,
+        "wires": [
+            [
+                "551a460c95a6d878"
+            ]
+        ]
+    },
+    {
+        "id": "737f92c01b1be158",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Consumo A",
+        "func": "msg.payload = msg.payload.DATA.KWHA;\nmsg.topic = 'Consumo A'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 120,
+        "wires": [
+            [
+                "186b37f45250539f"
+            ]
+        ]
+    },
+    {
+        "id": "186b37f45250539f",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "bb75fa75ece63af8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "label": "Consumos Individuais",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0dd61be1b73d963d",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Consumo C",
+        "func": "msg.payload = msg.payload.DATA.KWHC;\nmsg.topic = 'Consumo C'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 200,
+        "wires": [
+            [
+                "186b37f45250539f"
+            ]
+        ]
+    },
+    {
+        "id": "73267dfc5efebbfb",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Consumo B",
+        "func": "msg.payload = msg.payload.DATA.KWHB;\nmsg.topic = 'Consumo B'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 160,
+        "wires": [
+            [
+                "186b37f45250539f"
+            ]
+        ]
+    },
+    {
+        "id": "0497883ebaa7a10d",
+        "type": "function",
+        "z": "c877a67983c2c99c",
+        "name": "Corrente geral",
+        "func": "msg.payload = msg.payload.DATA.KWHT;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 260,
+        "wires": [
+            [
+                "8f6858c4a82c866f"
+            ]
+        ]
+    },
+    {
+        "id": "8f6858c4a82c866f",
+        "type": "ui_chart",
+        "z": "c877a67983c2c99c",
+        "name": "",
+        "group": "2e163821e8eec8a5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Corrente Total",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1060,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    }
+]
